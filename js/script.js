@@ -38,15 +38,19 @@ function startGame() {
 function onClick() {
     let cell = this; //cella cliccata
     let position = parseInt(this.innerHTML) - 1; //posizione della cella
+    let cellsElement = document.querySelectorAll(".cell");
     console.log(cell);
     console.log(position);
     //console.log(bombs);
     //Se la cella cliccata è una bomba
     if (bombs.includes(position)) {
-        cell.classList.add("bg-bomb"); //cambio la classe alla cella cliccata
-        cell.removeEventListener("click", onClick); //elimino l'event listener
+        cell.classList.add("bg-bomb"); //cambio il background color in rosso
+        //Rendo tutte le celle non cliccabili
+        for (let i = 0; i < cellsElement.length; i++) {
+            cellsElement[i].classList.add("not-clickable"); //aggiundo la classe per non far cliccare le celle
+        }
     } else { //altrimenti
-        cell.classList.add("bg-safe"); //cambio la classe alla cella cliccata
+        cell.classList.add("bg-safe"); //cambio il background color in azzurro
     }
 }
 

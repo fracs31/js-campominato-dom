@@ -74,3 +74,8 @@
 .bg-bomb {
     background-color: #d00000;
 }
+
+/* Celle non cliccabili */
+.not-clickable {
+    pointer-events: none;
+}
