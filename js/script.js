@@ -1,5 +1,6 @@
 let buttonElement = document.getElementById("btn"); //bottone per iniziare la partita
 let difficultyElement = document.getElementById("difficulty"); //select per la scelta della difficoltà
+let bombs = []; //celle con le bombe
 
 buttonElement.addEventListener("click", startGame); //quando viene premuto il bottone il gioco inizia
 
@@ -7,7 +8,6 @@ buttonElement.addEventListener("click", startGame); //quando viene premuto il bo
 function startGame() {
     let side = parseInt(difficultyElement.value); //lato della griglia
     let cells = side ** 2 ; //numero di celle
-    let bombs = []; //celle con le bombe
     let gridElement = document.getElementById("grid"); //griglia nel DOM
     buttonElement.remove(); //elimino il bottone per iniziare la partita
     difficultyElement.remove(); //elimino la scelta della difficoltà
@@ -25,7 +25,7 @@ function startGame() {
     for (let i = 0; i < 16; i++) {
         let random = getRandomIntInclusive(0, (cells - 1)); //creo il numero random
         //Se il numero random non è presente dentro l'array di bombe
-        if (!bombs.find(element => element == random)) {
+        if (!bombs.includes(random)) {
             bombs.push(random); //inserisco il numero
         } else { //altrimenti
             i--; //ripeto l'operazione
@@ -42,7 +42,7 @@ function onClick() {
     console.log(position);
     //console.log(bombs);
     //Se la cella cliccata è una bomba
-    if (bombs.find(element => element == position)) {
+    if (bombs.includes(position)) {
         cell.classList.add("bg-bomb"); //cambio la classe alla cella cliccata
         cell.removeEventListener("click", onClick); //elimino l'event listener
     } else { //altrimenti
