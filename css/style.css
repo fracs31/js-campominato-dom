@@ -55,6 +55,16 @@
     color: white;
 }
 
+/* Difficoltà */
+.difficulty {
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-right: 20px;
+}
+
 /* Background color per le celle sicure */
 .bg-safe {
     background-color: #90e0ef;
