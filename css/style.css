@@ -29,6 +29,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #4ad66d;
+}
+
+/* Celle figli pari */
+.cell:nth-child(even) {
+    background-color: #6ede8a;
+}
+
+/* Celle in hover */
+.cell:hover {
+    background-color: #b7efc5
 }
 
 /* Bottone per iniziare la partita */
@@ -50,6 +61,6 @@
 }
 
 /* Background color verde */
-.bg-green {
-    background-color: green;
+.bg-blue {
+    background-color: #90e0ef;
 }

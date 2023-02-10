@@ -23,5 +23,5 @@ function startGame() {
 function onClick() {
     let cell = this; //cella cliccata
     console.log(cell); //stampo in console la cella cliccata
-    cell.classList.toggle("bg-green"); //cambio la classe alla cella cliccata
+    cell.classList.toggle("bg-blue"); //cambio la classe alla cella cliccata
 }
