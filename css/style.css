@@ -32,11 +32,6 @@
     background-color: #4ad66d;
 }
 
-/* Celle figli pari */
-.cell:nth-child(even) {
-    background-color: #6ede8a;
-}
-
 /* Celle in hover */
 .cell:hover {
     background-color: #b7efc5
@@ -60,7 +55,12 @@
     color: white;
 }
 
-/* Background color verde */
-.bg-blue {
+/* Background color per le celle sicure */
+.bg-safe {
     background-color: #90e0ef;
+}
+
+/* Background color per le celle bomba */
+.bg-bomb {
+    background-color: #d00000;
 }
